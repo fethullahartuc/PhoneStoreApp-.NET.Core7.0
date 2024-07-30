@@ -1,0 +1,16 @@
+﻿@model Product
+
+<div>
+    <p>
+        @Model.Name isimli ürünü silmek istiyor musunuz ?
+        <form asp-action="Delete" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="@Model.ProductId" />
+            <div>
+                <img src="/img/@Model.Image" style="width:100px" />
+            </div>
+            <br />
+            <button class="btn btn-danger" type="submit">Evet</button>
+            <a class="btn btn-primary" href="/Home/Index">Hayır</a>
+        </form>
+    </p>
+</div>
